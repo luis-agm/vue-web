@@ -20,7 +20,7 @@ export default {
 }
 </script>
 
-<style lang='scss'>
+<style lang>
 body {
   margin: 0;
 }
@@ -37,6 +37,8 @@ body {
   width: 100%;
   background-color: black;
 }
+
+/* flexbox mebby? */
 
 h1 {
   color: #FFF;
