@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <div id='particles'>
-      <h1>Hello!</h1>
+    <div id='header'>
+      <h1>{{ headerTitle }}</h1>
     </div>
     <router-view></router-view>
   </div>
@@ -15,12 +15,20 @@ export default {
   name: 'app',
   mounted () {
     console.log(partCfg)
-    window.particlesJS('particles', partCfg)
+    window.particlesJS('header', partCfg)
+  },
+  data () {
+    return {
+      headerTitle: 'Awesome Header'
+    }
   }
 }
 </script>
 
-<style lang>
+<style lang='scss'>
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
 body {
   margin: 0;
 }
@@ -32,18 +40,33 @@ body {
   color: #2c3e50;
 }
 
-#particles {
+#header {
+  background: url('assets/roraima.png');
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
   height: 800px;
   width: 100%;
-  background-color: black;
+
+  h1 {
+    font-family: 'Ubuntu', sans-serif;
+    z-index: 99;
+    align-self: center;
+    color: #FFF;
+    top: 0;
+    width: 20%;
+  }
+
+  canvas {
+    background-color: rgba(#4781FF,0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
 
 /* flexbox mebby? */
 
-h1 {
-  color: #FFF;
-  font-family: sans-serif;
-  top: 0;
-  width: 20%;
-}
+
 </style>
