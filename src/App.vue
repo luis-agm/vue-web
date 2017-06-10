@@ -41,7 +41,7 @@ body {
 }
 
 #header {
-  background: url('assets/roraima.png');
+  background: url('assets/roraima.jpg');
   position: absolute;
   top: 0;
   left: 0;
