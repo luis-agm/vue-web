@@ -1,8 +1,5 @@
 <template>
-  <div id='header'>
-    <v-toolbar class='blue'>
-      <span>hello</span>
-    </v-toolbar>
+  <div id='header'>    
     <div id='parts'></div>
     <h1>{{ headerTitle }}</h1>
   </div>
