@@ -8,13 +8,13 @@
       }
     },
     "color": {
-      "value": "#57AEFF"
+      "value": "#20BF55"
     },
     "shape": {
       "type": "triangle",
       "stroke": {
         "width": 0,
-        "color": "#57AEFF"
+        "color": "#20BF55"
       },
       "polygon": {
         "nb_sides": 5
@@ -48,7 +48,7 @@
     "line_linked": {
       "enable": true,
       "distance": 150,
-      "color": "#57AEFF",
+      "color": "#20BF55",
       "opacity": 0.4,
       "width": 1
     },
@@ -72,7 +72,7 @@
     "events": {
       "onhover": {
         "enable": true,
-        "mode": "repulse"
+        "mode": "grab"
       },
       "onclick": {
         "enable": true,
@@ -82,7 +82,7 @@
     },
     "modes": {
       "grab": {
-        "distance": 400,
+        "distance": 200,
         "line_linked": {
           "opacity": 1
         }
