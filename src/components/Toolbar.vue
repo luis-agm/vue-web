@@ -3,7 +3,7 @@
       <v-toolbar-title class="main-toolbar__title toolbar-text" v-bind:class='{ "fixed-style": solidHeader }'>Toolbar</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-toolbar-item class="main-toolbar__item toolbar-text" v-for="item in navItems" :key="item">
+        <v-toolbar-item class="main-toolbar__item toolbar-text" v-bind:class='{ "fixed-style": solidHeader }' v-for="item in navItems" :key="item">
           {{ item.title }}
         </v-toolbar-item>
       </v-toolbar-items>
@@ -54,7 +54,8 @@ export default {
   color: $white;
 
   &.solid {
-    background: $primary;   
+    background: $primary;
+    box-shadow: 1px 1px 7px #000000 !important;
   }
 
   .fixed-style {
@@ -65,7 +66,10 @@ export default {
     .toolbar-text {
       color: $white;
       font-weight: 400;
-    }     
+    }
+    .fixed-style {      
+      color: $black; 
+    } 
   }
 
 }

@@ -9,14 +9,14 @@
 <script>
 import 'particles.js'
 import partCfg from '@/assets/particles.config.json'
-import Sphere from '@/scripts/clouder.js'
+// import Sphere from '@/scripts/clouder.js'
 
 export default {
   name: 'MainHeader',
   mounted () {
     console.log(partCfg)
     window.particlesJS('header', partCfg)
-    Sphere({container: 'clouder', tags: [ ...this.tags ]})
+    // Sphere({container: 'clouder', tags: [ ...this.tags ]})
   },
   data () {
     return {
@@ -33,7 +33,7 @@ export default {
 
 
 .header {
-  background: url('../assets/roraima.jpg');
+  background: radial-gradient(ellipse at 35% 25%, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 7)), url('../assets/roraima.jpg');
   background-size: cover;
   position: absolute;
   left: 0;
@@ -67,7 +67,7 @@ export default {
 
   canvas.particles-js-canvas-el {
     /* background-color: rgba(#4781FF,0.2); */
-    background-color: rgba(0,0,0,0.6);
+    // background-color: rgba(0,0,0,0.6);
     position: absolute;
     top: 0;
     left: 0;

@@ -1,5 +1,7 @@
-module.exports = (wat) => {
-  let width; let heigh; let largeHeader; let canvas; let ctx; let points; let target; const animateHeader = true
+/*eslint-disable*/
+
+export default (parent, son) => {
+  let width; let height; let largeHeader; let canvas; let ctx; let points; let target; let animateHeader = true
 
     // Main
   initHeader()
@@ -11,10 +13,10 @@ module.exports = (wat) => {
     height = window.innerHeight
     target = {x: width / 2, y: height / 2}
 
-    largeHeader = document.getElementById('large-header')
+    largeHeader = document.getElementById(parent)
     largeHeader.style.height = height + 'px'
 
-    canvas = document.getElementById(wat)
+    canvas = document.getElementById(son)
     canvas.width = width
     canvas.height = height
     ctx = canvas.getContext('2d')
