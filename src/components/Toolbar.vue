@@ -1,10 +1,10 @@
 <template>
   <v-toolbar class="main-toolbar elevation-0" v-bind:class='{ solid: solidHeader, "fixed-style": solidHeader }' light>
       <v-toolbar-side-icon light></v-toolbar-side-icon>
-      <v-toolbar-title class="main-toolbar__title toolbar-text" v-bind:class='{ "fixed-style": solidHeader }'>Toolbar</v-toolbar-title>
+      <v-toolbar-title class="main-toolbar__title toolbar-text" v-bind:class='{ "fixed-style": solidHeader }'>Developer</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-toolbar-item class="main-toolbar__item toolbar-text" v-bind:class='{ "fixed-style": solidHeader }' v-for="item in navItems" :key="item">
+        <v-toolbar-item class="main-toolbar__item toolbar-text" v-bind:class='{ "fixed-style": solidHeader }' v-for="item in navItems" :key="item" ripple>
           {{ item.title }}
         </v-toolbar-item>
       </v-toolbar-items>

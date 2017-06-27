@@ -1,7 +1,7 @@
 <template>
   <div id='header' class='header'>    
     <div id='parts'></div>
-    <h1 class='header__main-banner'>Make <span class='great'>Great</span> Stuff</h1>
+    <h1 class='header__main-banner'>Luis <span class='great'>Full-Stack</span> Developer</h1>
   </div>
 </template>
 
@@ -32,7 +32,7 @@ export default {
 
 
 .header {
-  background: radial-gradient(ellipse at 50% 60%, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 7)), url('../assets/moreSky.jpg');
+  background: radial-gradient(ellipse at 50% 60%, rgba(255, 255, 255, 0.0), rgba(0, 0, 0, 5)), url('../assets/moreSky.jpg');
   background-size: cover;
   background-attachment: fixed;
   position: absolute;
@@ -50,18 +50,21 @@ export default {
     width: 300px;
   }
 
-  &__main-banner {    
+  &__main-banner {
+    text-shadow: 2px 3px 10px black;
+    transform: translateY(-15%);
     font-family: 'Raleway', sans-serif;
     font-size: 64px;
     font-weight: 900;
     z-index: 99;
-    align-self: flex-start;
+    align-self: center;
     color: #FFF;
     top: 50%;
-    width: 20%;
+    width: 60%;
   }
 
   .great {
+      text-overflow: nowrap;
       font-size:100%;
       color: $primary;
     }
