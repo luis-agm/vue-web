@@ -27,7 +27,7 @@ body {
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -moz-osx-font-smoothing: grayscale;
-  height: 200vh;
+  height: 100vh;
 }
 
 </style>

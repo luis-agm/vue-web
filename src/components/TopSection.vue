@@ -32,7 +32,7 @@ export default {
 
 
 .header {
-  background: radial-gradient(ellipse at 35% 25%, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 7)), url('../assets/roraima.jpg');
+  background: radial-gradient(ellipse at 50% 60%, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 7)), url('../assets/moreSky.jpg');
   background-size: cover;
   background-attachment: fixed;
   position: absolute;
