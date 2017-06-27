@@ -1,26 +1,45 @@
 <template>
   <div id='header' class='header'>    
     <div id='parts'></div>
-    <h1 class='header__main-banner'>Luis <span class='great'>Full-Stack</span> Developer</h1>
+    <div class='header__banner'>
+      <h1 class='header__main-banner name'>Luis González ,</h1>
+      <transition name='fade'>
+        <span v-show="showTag === true" class='header__main-banner great'>{{currentTag}}</span>
+      </transition>
+      <h1 class='header__main-banner developer'> Developer</h1>
+    </div>
   </div>
 </template>
 
 <script>
 import 'particles.js'
 import partCfg from '@/assets/particles.config.json'
-// import Sphere from '@/scripts/clouder.js'
 
 export default {
   name: 'MainHeader',
   mounted () {
     console.log(partCfg)
     window.particlesJS('header', partCfg)
+    setInterval(() => { this.cycleTags() }, 1500)
     // Sphere({container: 'clouder', tags: [ ...this.tags ]})
   },
   data () {
     return {
+      showTag: true,
+      currentTag: 'Full-Stack',
+      tagPos: 0,
       headerTitle: 'Make Great Stuff',
       tags: ['JavaScript', 'ES6', 'NodeJS', 'Stuff', 'More Stuff']
+    }
+  },
+  methods: {
+    cycleTags () {
+      this.showTag = false
+      setTimeout(() => {
+        this.currentTag = this.tags[this.tagPos]
+        this.tagPos === this.tags.length - 1 ? this.tagPos = 0 : this.tagPos += 1
+        this.showTag = true
+      }, 300)
     }
   }
 }
@@ -50,28 +69,47 @@ export default {
     width: 300px;
   }
 
+  &__banner {
+    width: 60%;
+    display: flex;
+    flex-flow: column;
+  }
+
   &__main-banner {
     text-shadow: 2px 3px 10px black;
     transform: translateY(-15%);
-    font-family: 'Raleway', sans-serif;
     font-size: 64px;
     font-weight: 900;
     z-index: 99;
-    align-self: center;
     color: #FFF;
     top: 50%;
     width: 60%;
+    &.name {
+      align-self: flex-start;
+      width: auto;
+    }
+    &.great {
+      text-align: center;
+      align-self: center;
+      width: 100%;
+      transform: translateX(-50px);
+      color: $primary;
+      margin-bottom: 16px;
+    }
+    &.developer {
+      align-self: flex-end;
+      width: auto;
+    }
   }
 
-  .great {
-      text-overflow: nowrap;
-      font-size:100%;
-      color: $primary;
-    }
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .3s
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0
+  }
 
   canvas.particles-js-canvas-el {
-    /* background-color: rgba(#4781FF,0.2); */
-    // background-color: rgba(0,0,0,0.6);
     position: absolute;
     top: 0;
     left: 0;

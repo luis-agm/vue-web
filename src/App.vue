@@ -2,17 +2,24 @@
   <div id="app">
     <toolbar></toolbar>
     <top-section class='topsection'></top-section>
-    <router-view></router-view>
+    <main-footer></main-footer>
+    <router-view v-if='nav'></router-view>
   </div>
 </template>
 
 <script>
 import Toolbar from 'components/Toolbar.vue'
 import TopSection from 'components/TopSection.vue'
+import MainFooter from 'components/Footer.vue'
 
 export default {
+  data () {
+    return {
+      nav: false
+    }
+  },
   name: 'app',
-  components: {TopSection, Toolbar}
+  components: {TopSection, Toolbar, MainFooter}
 }
 </script>
 
@@ -25,7 +32,10 @@ body {
   background-color: $dark-gray;
 }
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-flow: column;
+  font-family: 'Raleway', Helvetica, Arial, sans-serif;
+  font-size: 14pt;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
 }

@@ -20,8 +20,9 @@ export default {
     return {
       pageTitle: 'DevDevDev',
       navItems: [
-        {title: 'Projects', link: '#'},
-        {title: 'Destruction', link: '#'}
+        {title: 'Home', link: '#'},
+        {title: 'About Me', link: '#'},
+        {title: 'Projects', link: '#'}
       ],
       solidHeader: false
     }
