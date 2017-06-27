@@ -1,5 +1,6 @@
 <template>
   <v-toolbar class="main-toolbar elevation-0" v-bind:class='{ solid: solidHeader, "fixed-style": solidHeader }' light>
+      <v-toolbar-side-icon light></v-toolbar-side-icon>
       <v-toolbar-title class="main-toolbar__title toolbar-text" v-bind:class='{ "fixed-style": solidHeader }'>Toolbar</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>

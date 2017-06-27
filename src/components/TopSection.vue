@@ -2,7 +2,6 @@
   <div id='header' class='header'>    
     <div id='parts'></div>
     <h1 class='header__main-banner'>Make <span class='great'>Great</span> Stuff</h1>
-    <div id='clouder' class='sphere'></div>
   </div>
 </template>
 
@@ -35,6 +34,7 @@ export default {
 .header {
   background: radial-gradient(ellipse at 35% 25%, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 7)), url('../assets/roraima.jpg');
   background-size: cover;
+  background-attachment: fixed;
   position: absolute;
   left: 0;
   display: flex;
@@ -52,6 +52,7 @@ export default {
 
   &__main-banner {    
     font-family: 'Raleway', sans-serif;
+    font-size: 64px;
     font-weight: 900;
     z-index: 99;
     align-self: flex-start;
@@ -61,7 +62,7 @@ export default {
   }
 
   .great {
-      font-size:150%;
+      font-size:100%;
       color: $primary;
     }
 
