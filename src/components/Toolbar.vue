@@ -61,7 +61,11 @@ export default {
 
   .fixed-style {
     color: $black; 
-  }  
+  }
+
+  &.toolbar--light .toolbar__item:hover {
+    background-color: rgba(255,255,255,0.1);
+  }
 
   &__title, &__item {    
     .toolbar-text {
