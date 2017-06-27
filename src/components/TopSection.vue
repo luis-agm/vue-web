@@ -29,7 +29,7 @@ export default {
       currentTag: 'Full-Stack',
       tagPos: 0,
       headerTitle: 'Make Great Stuff',
-      tags: ['JavaScript', 'ES6', 'NodeJS', 'Stuff', 'More Stuff']
+      tags: ['JavaScript', 'Babel/ES6', 'NodeJS', 'Python', 'VueJS', 'React-Redux']
     }
   },
   methods: {
@@ -89,15 +89,13 @@ export default {
       width: auto;
     }
     &.great {
-      text-align: center;
-      align-self: center;
-      width: 100%;
-      transform: translateX(-50px);
+      align-self: flex-start;
+      font-size: 72px;
+      width: auto;
       color: $primary;
-      margin-bottom: 16px;
     }
     &.developer {
-      align-self: flex-end;
+      align-self: flex-start;
       width: auto;
     }
   }
