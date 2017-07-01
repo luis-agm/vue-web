@@ -18,7 +18,6 @@ import partCfg from '@/assets/particles.config.json'
 export default {
   name: 'MainHeader',
   mounted () {
-    console.log(partCfg)
     window.particlesJS('header', partCfg)
     setInterval(() => { this.cycleTags() }, 1500)
     // Sphere({container: 'clouder', tags: [ ...this.tags ]})
@@ -54,8 +53,6 @@ export default {
   background: radial-gradient(ellipse at 50% 60%, rgba(255, 255, 255, 0.0), rgba(0, 0, 0, 5)), url('../assets/moreSky.jpg');
   background-size: cover;
   background-attachment: fixed;
-  position: absolute;
-  left: 0;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -63,11 +60,6 @@ export default {
   height: 100vh;
   width: 100%;
   padding: 40px;
-
-  #clouder {
-    height: 300px;
-    width: 300px;
-  }
 
   &__banner {
     width: 60%;
@@ -79,8 +71,7 @@ export default {
     text-shadow: 2px 3px 10px black;
     transform: translateY(-15%);
     font-size: 64px;
-    font-weight: 900;
-    z-index: 99;
+    font-weight: 900;    
     color: #FFF;
     top: 50%;
     width: 60%;

@@ -1,7 +1,7 @@
 {
-  "name": "stuff",
+  "name": "luis-agm",
   "version": "1.0.0",
-  "description": "testing particles in vuejs",
+  "description": "Basic personal website",
   "author": "Luis Gonzalez",
   "private": true,
   "scripts": {

@@ -1,6 +1,6 @@
 <template>
   <v-toolbar class="main-toolbar elevation-0" v-bind:class='{ solid: solidHeader, "fixed-style": solidHeader }' light>
-      <v-toolbar-side-icon light></v-toolbar-side-icon>
+      <v-toolbar-side-icon @click.native.stop="sideNav()" light></v-toolbar-side-icon>
       <v-toolbar-title class="main-toolbar__title toolbar-text" v-bind:class='{ "fixed-style": solidHeader }'>Developer</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
@@ -16,6 +16,7 @@
 import debounce from 'lodash/debounce'
 
 export default {
+  props: ['toggleNav'],
   data () {
     return {
       pageTitle: 'DevDevDev',
@@ -28,8 +29,10 @@ export default {
     }
   },
   methods: {
+    sideNav () {
+      this.toggleNav()
+    },
     positionCheck () {
-      console.log('waat')
       if (window.scrollY >= 56) this.solidHeader = true
       if (window.scrollY < 56) this.solidHeader = false
     }
@@ -48,7 +51,7 @@ export default {
 @import '../assets/styles/style.scss';
 
 .main-toolbar {
-  z-index: 1000;
+  z-index: 1;
   width: 100%;
   position:fixed;
   transition: background 0.4s;
