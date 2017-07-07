@@ -1,13 +1,18 @@
 <template>
-  <div id='header' class='header'>    
-    <div id='parts'></div>
+  <div id='header' class='header'>
     <div class='header__banner'>
-      <h1 class='header__main-banner name'>Luis González ,</h1>
-      <transition name='fade'>
-        <span v-show="showTag === true" class='header__main-banner great'>{{currentTag}}</span>
-      </transition>
-      <h1 class='header__main-banner developer'> Developer</h1>
+      <div class='header__title'>
+        <h1 class='header__main-banner name'>Luis González ,</h1>
+        <transition name='fade'>
+          <span v-show="showTag === true" class='header__main-banner great'>{{currentTag}}</span>
+        </transition>
+        <h1 class='header__main-banner developer'> Developer</h1>
+      </div>
+      <div class='header__buttons'>
+        <button></button>
+      </div>
     </div>
+    <div id='parts'></div>
   </div>
 </template>
 
@@ -18,8 +23,8 @@ import partCfg from '@/assets/particles.config.json'
 export default {
   name: 'MainHeader',
   mounted () {
-    window.particlesJS('header', partCfg)
-    setInterval(() => { this.cycleTags() }, 1500)
+    window.particlesJS('parts', partCfg)
+    // setInterval(() => { this.cycleTags() }, 1500)
     // Sphere({container: 'clouder', tags: [ ...this.tags ]})
   },
   data () {
@@ -46,10 +51,8 @@ export default {
 
 <style lang='scss'>
 
-@import '../assets/styles/style.scss';
-
-
 .header {
+  font-family: 'Raleway', Helvetica, Arial, sans-serif;
   background: radial-gradient(ellipse at 50% 60%, rgba(255, 255, 255, 0.0), rgba(0, 0, 0, 5)), url('../assets/moreSky.jpg');
   background-size: cover;
   background-attachment: fixed;
@@ -61,8 +64,18 @@ export default {
   width: 100%;
   padding: 40px;
 
+  &__buttons {
+    display: flex;
+    
+  }
+
   &__banner {
     width: 60%;
+    display: flex;
+    flex-flow: row;
+  }
+
+  &__title {
     display: flex;
     flex-flow: column;
   }

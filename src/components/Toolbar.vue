@@ -4,9 +4,9 @@
       <v-toolbar-title class="main-toolbar__title toolbar-text" v-bind:class='{ "fixed-style": solidHeader }'>Developer</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-toolbar-item class="main-toolbar__item toolbar-text" v-bind:class='{ "fixed-style": solidHeader }' v-for="item in navItems" :key="item" ripple>
+        <v-btn class="main-toolbar__item toolbar-text" v-bind:class='{ "fixed-style": solidHeader }' v-for="item in navItems" :key="item" ripple>
           {{ item.title }}
-        </v-toolbar-item>
+        </v-btn>
       </v-toolbar-items>
     </v-toolbar>
 </template>
@@ -47,8 +47,6 @@ export default {
 </script>
 
 <style lang='scss'>
-
-@import '../assets/styles/style.scss';
 
 .main-toolbar {
   z-index: 1;

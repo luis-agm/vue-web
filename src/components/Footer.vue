@@ -12,7 +12,10 @@
 </script>
 
 <style lang='scss'>
+
   .footer {
+
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
     height: auto;
     flex-flow: column;
     align-content: center;
@@ -21,6 +24,7 @@
     bottom: 0;
     background: transparent;
     &__text {
+      color: $white;
       width: auto;
       font-size: 0.8em;
     }
