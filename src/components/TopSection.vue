@@ -1,17 +1,17 @@
 <template>
   <div id='header' class='header'>
     <div class='header__banner medium-10 large-10 large-centered columns grid-x'>
-      <div class='header__title small-10 medium-12 medium-centered large-6 columns'>
-        <h1 class='header__main-banner name'>Luis González ,</h1>
+      <div class='header__title small-10 small-centered medium-12 medium-centered large-6 columns'>
+        <h1 class='header__main-banner name'>Luis González</h1>
         <transition name='fade'>
           <span v-show="showTag === true" class='header__main-banner great'>{{currentTag}}</span>
         </transition>
-        <h1 class='header__main-banner developer'> Developer</h1>
+        <h1 class='header__main-banner developer'>Developer</h1>
       </div>
-      <div class='header__buttons small-10 medium-12 large-6 columns grid-y'>
-        <button class='btn small-3 rows'><i class='fa fa-github'></i> GitHub</button>
-        <button class='btn small-3 rows'><i class='fa fa-linkedin'></i> LinkedIn</button>
-        <button class='btn small-3 rows'><i class='fa fa-envelope'></i> Contact Me</button>
+      <div class='header__buttons small-10 small-centered medium-12 medium-centered large-6 columns grid-x'>
+        <button class='btn small-12 large-7 rows'><i class='fa fa-github'></i> GitHub</button>
+        <button class='btn small-12 large-7 rows'><i class='fa fa-linkedin'></i> LinkedIn</button>
+        <button class='btn small-12 large-7 rows'><i class='fa fa-envelope'></i> Contact Me</button>
       </div>
     </div>
     <div id='parts'></div>
@@ -67,15 +67,16 @@ export default {
 
   &__buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 50px 0px;
+    min-height: 220px;
     .btn {
       display: flex;
       justify-content: space-around;
       color: $white;
       font-size: 24px;
       font-style: bold;
-      border: 3px solid $primary;
+      border: 2px solid $primary;
       border-radius: 5px;
       align-self: center;
       width: 60%;
