@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <top-section class='topsection'></top-section>
+    <top-section class='topsection grid-x'></top-section>
     <main-footer></main-footer>
     <router-view v-if='nav'></router-view>
   </div>

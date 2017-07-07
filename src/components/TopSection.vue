@@ -1,15 +1,17 @@
 <template>
   <div id='header' class='header'>
-    <div class='header__banner medium-10 medium-offset-1 columns'>
-      <div class='header__title'>
+    <div class='header__banner medium-10 large-10 large-centered columns grid-x'>
+      <div class='header__title small-10 medium-12 medium-centered large-6 columns'>
         <h1 class='header__main-banner name'>Luis González ,</h1>
         <transition name='fade'>
           <span v-show="showTag === true" class='header__main-banner great'>{{currentTag}}</span>
         </transition>
         <h1 class='header__main-banner developer'> Developer</h1>
       </div>
-      <div class='header__buttons'>
-        <button></button>
+      <div class='header__buttons small-10 medium-12 large-6 columns grid-y'>
+        <button class='btn small-3 rows'><i class='fa fa-github'></i> GitHub</button>
+        <button class='btn small-3 rows'><i class='fa fa-linkedin'></i> LinkedIn</button>
+        <button class='btn small-3 rows'><i class='fa fa-envelope'></i> Contact Me</button>
       </div>
     </div>
     <div id='parts'></div>
@@ -24,7 +26,7 @@ export default {
   name: 'MainHeader',
   mounted () {
     window.particlesJS('parts', partCfg)
-    // setInterval(() => { this.cycleTags() }, 1500)
+    setInterval(() => { this.cycleTags() }, 1500)
     // Sphere({container: 'clouder', tags: [ ...this.tags ]})
   },
   data () {
@@ -61,18 +63,32 @@ export default {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  width: 100%;
   padding: 40px;
 
   &__buttons {
     display: flex;
-    
+    justify-content: space-between;
+    padding: 50px 0px;
+    .btn {
+      display: flex;
+      justify-content: space-around;
+      color: $white;
+      font-size: 24px;
+      font-style: bold;
+      border: 3px solid $primary;
+      border-radius: 5px;
+      align-self: center;
+      width: 60%;
+      padding: 10px 40px;
+      background-color: rgba(0, 0, 0, 0.3)
+    }
   }
 
   &__banner {
-    width: 60%;
+    z-index: 2;
     display: flex;
     flex-flow: row;
+    max-width: 1200px;
   }
 
   &__title {
@@ -91,6 +107,8 @@ export default {
     &.name {
       align-self: flex-start;
       width: auto;
+      margin-top: 0.3em;
+      margin-bottom: 0.3em;
     }
     &.great {
       align-self: flex-start;
@@ -101,6 +119,8 @@ export default {
     &.developer {
       align-self: flex-start;
       width: auto;
+      margin-top: 0.3em;
+      margin-bottom: 0.3em;
     }
   }
 
@@ -112,6 +132,7 @@ export default {
   }
 
   canvas.particles-js-canvas-el {
+    z-index: 1;
     position: absolute;
     top: 0;
     left: 0;
