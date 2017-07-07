@@ -1,6 +1,6 @@
 <template>
   <div id='header' class='header'>
-    <div class='header__banner'>
+    <div class='header__banner medium-10 medium-offset-1 columns'>
       <div class='header__title'>
         <h1 class='header__main-banner name'>Luis González ,</h1>
         <transition name='fade'>

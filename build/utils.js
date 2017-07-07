@@ -46,7 +46,10 @@ exports.cssLoaders = function (options) {
 
   // ****Custom options to not have to @import variables on every component****
   const scssOptions = {
-    data: '@import "src/assets/styles/main.scss";'
+    includePaths: [
+      './src/assets/styles'
+    ],
+    data: '@import "src/assets/styles/app";'
   }
 
   // https://vue-loader.vuejs.org/en/configurations/extract-css.html
