@@ -44,13 +44,21 @@ exports.cssLoaders = function (options) {
     }
   }
 
+  // ****Custom options to not have to @import variables on every component****
+  const scssOptions = {
+    includePaths: [
+      './src/assets/styles'
+    ],
+    data: '@import "src/assets/styles/app";'
+  }
+
   // https://vue-loader.vuejs.org/en/configurations/extract-css.html
   return {
     css: generateLoaders(),
     postcss: generateLoaders(),
     less: generateLoaders('less'),
     sass: generateLoaders('sass', { indentedSyntax: true }),
-    scss: generateLoaders('sass'),
+    scss: generateLoaders('sass',scssOptions),
     stylus: generateLoaders('stylus'),
     styl: generateLoaders('stylus')
   }
