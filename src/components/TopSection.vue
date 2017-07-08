@@ -9,9 +9,9 @@
         <h1 class='header__main-banner developer'>Developer</h1>
       </div>
       <div class='header__buttons small-10 small-centered medium-12 medium-centered large-6 columns grid-x'>
-        <button class='btn small-12 large-7 rows'><i class='fa fa-github'></i> GitHub</button>
-        <button class='btn small-12 large-7 rows'><i class='fa fa-linkedin'></i> LinkedIn</button>
-        <button class='btn small-12 large-7 rows'><i class='fa fa-envelope'></i> Contact Me</button>
+        <button class='btn btn-1e small-12 large-7 rows'><i class='fa fa-github'></i> GitHub</button>
+        <button class='btn btn-1e small-12 large-7 rows'><i class='fa fa-linkedin'></i> LinkedIn</button>
+        <button class='btn btn-1e small-12 large-7 rows'><i class='fa fa-envelope'></i> Contact Me</button>
       </div>
     </div>
     <div id='parts'></div>
@@ -71,17 +71,64 @@ export default {
     padding: 50px 0px;
     min-height: 220px;
     .btn {
-      display: flex;
-      justify-content: space-around;
+      border: none;
+      font-family: inherit;
+      font-size: inherit;
       color: $white;
-      font-size: 24px;
-      font-style: bold;
-      border: 2px solid $primary;
-      border-radius: 5px;
-      align-self: center;
-      width: 60%;
-      padding: 10px 40px;
-      background-color: rgba(0, 0, 0, 0.3)
+      background: none;
+      cursor: pointer;
+      padding: 25px 80px;
+      display: inline-block;
+      margin: 15px 30px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      outline: none;
+      position: relative;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
+
+      &.btn-1e {
+        overflow: hidden;
+        border: 3px solid $primary;
+      }
+
+      &.btn-1e:after {
+        width: 100%;
+        height: 0;
+        top: 50%;
+        left: 50%;
+        background: $primary;
+        opacity: 0;
+        -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+        -moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+        -ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+        transform: translateX(-50%) translateY(-50%) rotate(45deg);
+      }
+
+      &.btn-1e:hover,
+      &.btn-1e:active {
+        color: $black;
+      }
+
+      &.btn-1e:hover:after {
+        height: 260%;
+        opacity: 1;
+      }
+
+      &.btn-1e:active:after {
+        height: 400%;
+        opacity: 1;
+      }
+    }
+    .btn:after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
     }
   }
 
