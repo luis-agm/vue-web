@@ -35,7 +35,13 @@ export default {
       }
 
       i.fa {
-        align-self: flex-start;
+        align-self: flex-start;        
+        &:before{
+          transform: translateY(-7px);
+          width: 38px;
+          height: 38px;
+          overflow: hidden;
+        }
       }
 
       &.btn-1e {

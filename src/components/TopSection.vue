@@ -1,17 +1,18 @@
 <template>
-  <div id='header' class='header'>
-    <div class='header__banner medium-10 large-10 large-centered columns grid-x'>
-      <div class='header__title small-10 small-centered medium-12 medium-centered large-6 columns'>
-        <h1 class='header__main-banner name'>Luis González</h1>
+  <div id='top-section' class='top-section'>
+    <div class='top-section__banner medium-10 large-10 large-centered columns grid-x'>
+      <div class='top-section__title small-10 small-centered medium-12 medium-centered large-6 columns'>
+        <h1 class='top-section__main-banner name'>Luis González</h1>
         <transition name='fade'>
-          <span v-show="showTag === true" class='header__main-banner great'>{{currentTag}}</span>
+          <span v-show="showTag === true" class='top-section__main-banner great'>{{currentTag}}</span>
         </transition>
-        <h1 class='header__main-banner developer'>Developer</h1>
+        <h1 class='top-section__main-banner developer'>Developer</h1>
       </div>
-      <div class='header__buttons small-10 small-centered medium-12 medium-centered large-6 columns grid-x'>
-        <top-button v-for='button in buttons' :key='button' :icon='button.icon' :text='button.text' @click.native='goTo( button.link )'></top-button>
+      <div class='top-section__buttons small-10 small-centered medium-12 medium-centered large-6 columns grid-x'>
+        <TopButton v-for='button in buttons' :key='button' :icon='button.icon' :text='button.text' @click.native='goTo( button.link )'></TopButton>
       </div>
     </div>
+    <ModalForm v-if='showForm' @close='closeForm()'></ModalForm>
     <div id='parts'></div>
   </div>
 </template>
@@ -20,9 +21,10 @@
 import 'particles.js'
 import partCfg from '@/assets/particles.config.json'
 import TopButton from 'components/TopButton.vue'
+import ModalForm from 'components/ModalForm.vue'
 
 export default {
-  name: 'MainHeader',
+  name: 'TopSection',
   mounted () {
     window.particlesJS('parts', partCfg)
     setInterval(() => { this.cycleTags() }, 1500)
@@ -39,14 +41,18 @@ export default {
         { icon: 'fa-github', text: 'GitHub', link: 'http://github.com/luis-agm' },
         { icon: 'fa-linkedin', text: 'LinkedIn', link: 'http://linkedin.com/in/luis-agm-dev' },
         { icon: 'fa-envelope', text: 'Contact Me', link: 'contact' }
-      ]
+      ],
+      showForm: false
     }
   },
   methods: {
+    closeForm () {
+      console.log('wat')
+      this.showForm = false
+    },
     goTo (link) {
-      console.log('LINKED')
       if (link === 'contact') {
-
+        this.showForm = true
       } else {
         window.location = link
       }
@@ -60,13 +66,13 @@ export default {
       }, 300)
     }
   },
-  components: { TopButton }
+  components: { TopButton, ModalForm }
 }
 </script>
 
 <style lang='scss'>
 
-.header {
+.top-section {
   font-family: 'Raleway', Helvetica, Arial, sans-serif;
   background: radial-gradient(ellipse at 50% 60%, rgba(255, 255, 255, 0.0), rgba(0, 0, 0, 5)), url('../assets/moreSky.jpg');
   background-size: cover;
