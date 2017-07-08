@@ -47,7 +47,6 @@ export default {
   },
   methods: {
     closeForm () {
-      console.log('wat')
       this.showForm = false
     },
     goTo (link) {

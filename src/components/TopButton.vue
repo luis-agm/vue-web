@@ -8,9 +8,8 @@ export default {
 }
 </script>
 
-<style lang='scss'>
+<style lang='scss' scoped>
   .btn {
-      border: none;
       font-family: 'Roboto', sans-serif;
       font-weight: 500;
       font-size: inherit;
@@ -27,6 +26,9 @@ export default {
       position: relative;
       transition: all 0.3s;
       box-shadow: 3px 4px 10px black;
+      overflow: hidden;
+      border: 2px solid $primary;
+      border-radius: 2px;
 
       &__text {
         width: 80%;
@@ -42,11 +44,6 @@ export default {
           height: 38px;
           overflow: hidden;
         }
-      }
-
-      &.btn-1e {
-        overflow: hidden;
-        border: 2px solid $primary;
       }
 
       &.btn-1e:after {
