@@ -9,9 +9,9 @@
         <h1 class='header__main-banner developer'>Developer</h1>
       </div>
       <div class='header__buttons small-10 small-centered medium-12 medium-centered large-6 columns grid-x'>
-        <button class='btn btn-1e small-12 large-7 rows'><i class='fa fa-github'></i> GitHub</button>
-        <button class='btn btn-1e small-12 large-7 rows'><i class='fa fa-linkedin'></i> LinkedIn</button>
-        <button class='btn btn-1e small-12 large-7 rows'><i class='fa fa-envelope'></i> Contact Me</button>
+        <button class='btn btn-1e small-12 large-7 rows'><span class='btn__text'><i class='fa fa-github fa-3'></i> GitHub</span></button>
+        <button class='btn btn-1e small-12 large-7 rows'><span class='btn__text'><i class='fa fa-linkedin'></i> LinkedIn</span></button>
+        <button class='btn btn-1e small-12 large-7 rows'><span class='btn__text'><i class='fa fa-envelope'></i> Contact Me</span></button>
       </div>
     </div>
     <div id='parts'></div>
@@ -68,14 +68,13 @@ export default {
   &__buttons {
     display: flex;
     justify-content: center;
-    padding: 50px 0px;
     min-height: 220px;
     .btn {
       border: none;
       font-family: inherit;
       font-size: inherit;
       color: $white;
-      background: none;
+      background: rgba(0, 0, 0, 0.3);
       cursor: pointer;
       padding: 25px 80px;
       display: inline-block;
@@ -85,13 +84,12 @@ export default {
       font-weight: 700;
       outline: none;
       position: relative;
-      -webkit-transition: all 0.3s;
-      -moz-transition: all 0.3s;
       transition: all 0.3s;
+      box-shadow: 3px 4px 10px black;
 
       &.btn-1e {
         overflow: hidden;
-        border: 3px solid $primary;
+        border: 2px solid $primary;
       }
 
       &.btn-1e:after {
@@ -101,15 +99,14 @@ export default {
         left: 50%;
         background: $primary;
         opacity: 0;
-        -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
-        -moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
-        -ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
         transform: translateX(-50%) translateY(-50%) rotate(45deg);
       }
 
       &.btn-1e:hover,
       &.btn-1e:active {
         color: $black;
+        border-color: #16863B;
+        box-shadow: 0px 0px 15px black;
       }
 
       &.btn-1e:hover:after {
@@ -126,8 +123,6 @@ export default {
       content: '';
       position: absolute;
       z-index: -1;
-      -webkit-transition: all 0.3s;
-      -moz-transition: all 0.3s;
       transition: all 0.3s;
     }
   }
