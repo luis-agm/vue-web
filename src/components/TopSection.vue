@@ -9,9 +9,7 @@
         <h1 class='header__main-banner developer'>Developer</h1>
       </div>
       <div class='header__buttons small-10 small-centered medium-12 medium-centered large-6 columns grid-x'>
-        <button class='btn btn-1e small-12 large-7 rows'><span class='btn__text'><i class='fa fa-github fa-3'></i> GitHub</span></button>
-        <button class='btn btn-1e small-12 large-7 rows'><span class='btn__text'><i class='fa fa-linkedin'></i> LinkedIn</span></button>
-        <button class='btn btn-1e small-12 large-7 rows'><span class='btn__text'><i class='fa fa-envelope'></i> Contact Me</span></button>
+        <top-button v-for='button in buttons' :key='button' :icon='button.icon' :text='button.text' @click.native='goTo( button.link )'></top-button>
       </div>
     </div>
     <div id='parts'></div>
@@ -21,6 +19,7 @@
 <script>
 import 'particles.js'
 import partCfg from '@/assets/particles.config.json'
+import TopButton from 'components/TopButton.vue'
 
 export default {
   name: 'MainHeader',
@@ -35,10 +34,23 @@ export default {
       currentTag: 'Full-Stack',
       tagPos: 0,
       headerTitle: 'Make Great Stuff',
-      tags: ['JavaScript', 'Babel/ES6', 'NodeJS', 'Python', 'VueJS', 'React-Redux']
+      tags: ['JavaScript', 'Babel/ES6', 'NodeJS', 'Python', 'VueJS', 'React-Redux'],
+      buttons: [
+        { icon: 'fa-github', text: 'GitHub', link: 'http://github.com/luis-agm' },
+        { icon: 'fa-linkedin', text: 'LinkedIn', link: 'http://linkedin.com/in/luis-agm-dev' },
+        { icon: 'fa-envelope', text: 'Contact Me', link: 'contact' }
+      ]
     }
   },
   methods: {
+    goTo (link) {
+      console.log('LINKED')
+      if (link === 'contact') {
+
+      } else {
+        window.location = link
+      }
+    },
     cycleTags () {
       this.showTag = false
       setTimeout(() => {
@@ -47,7 +59,8 @@ export default {
         this.showTag = true
       }, 300)
     }
-  }
+  },
+  components: { TopButton }
 }
 </script>
 
@@ -68,63 +81,7 @@ export default {
   &__buttons {
     display: flex;
     justify-content: center;
-    min-height: 220px;
-    .btn {
-      border: none;
-      font-family: inherit;
-      font-size: inherit;
-      color: $white;
-      background: rgba(0, 0, 0, 0.3);
-      cursor: pointer;
-      padding: 25px 80px;
-      display: inline-block;
-      margin: 15px 30px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 700;
-      outline: none;
-      position: relative;
-      transition: all 0.3s;
-      box-shadow: 3px 4px 10px black;
-
-      &.btn-1e {
-        overflow: hidden;
-        border: 2px solid $primary;
-      }
-
-      &.btn-1e:after {
-        width: 100%;
-        height: 0;
-        top: 50%;
-        left: 50%;
-        background: $primary;
-        opacity: 0;
-        transform: translateX(-50%) translateY(-50%) rotate(45deg);
-      }
-
-      &.btn-1e:hover,
-      &.btn-1e:active {
-        color: $black;
-        border-color: #16863B;
-        box-shadow: 0px 0px 15px black;
-      }
-
-      &.btn-1e:hover:after {
-        height: 260%;
-        opacity: 1;
-      }
-
-      &.btn-1e:active:after {
-        height: 400%;
-        opacity: 1;
-      }
-    }
-    .btn:after {
-      content: '';
-      position: absolute;
-      z-index: -1;
-      transition: all 0.3s;
-    }
+    min-height: 220px;    
   }
 
   &__banner {
@@ -132,6 +89,7 @@ export default {
     display: flex;
     flex-flow: row;
     max-width: 1200px;
+    justify-content: space-around;
   }
 
   &__title {
@@ -141,8 +99,7 @@ export default {
 
   &__main-banner {
     text-shadow: 2px 3px 10px black;
-    transform: translateY(-15%);
-    font-size: 64px;
+    font-size: responsive 50px 64px;
     font-weight: 900;    
     color: #FFF;
     top: 50%;
@@ -155,7 +112,7 @@ export default {
     }
     &.great {
       align-self: flex-start;
-      font-size: 72px;
+      font-size: responsive 55px 70px;
       width: auto;
       color: $primary;
     }

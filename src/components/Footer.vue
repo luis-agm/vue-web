@@ -14,7 +14,7 @@
 <style lang='scss'>
 
   .footer {
-
+    margin-bottom: 10px;
     font-family: 'Raleway', Helvetica, Arial, sans-serif;
     height: auto;
     flex-flow: column;
