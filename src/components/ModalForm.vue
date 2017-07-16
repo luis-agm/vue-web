@@ -96,12 +96,12 @@ export default {
     margin-bottom: 10px;
     color: $primary;
     font-weight: 600;
-    font-size: 32px;
+    font-size: responsive 24px 38px;
   }
   .sub-header {
     font-style: italic;
     font-weight: 600;
-    font-size: 14px;
+    font-size: responsive 12px 18px;
     color: $light-gray;
   }
 }
@@ -131,22 +131,24 @@ export default {
       box-sizing: border-box;
       width: 100%;
       font-family: 'Roboto', sans-serif;
+      font-size: responsive 12px 14px;
       height: 35px;
       margin: 5px 0px;
       border-radius: 2px;
-      border: 3px solid $dark-gray;
-      padding: 10px 10px;
+      border: none;
+      border-bottom: 2px solid $dark-gray;
+      padding: 0 10px;
 
       &.message {
-        height: 70px;
+        height: 85px;
+        padding-top: 10px;        
       }
 
       &.is-danger {
         box-shadow: 0px 0px 4px red;
       }
     }
-    .form-error {
-      font-size: 10px;
+    .form-error {      
       color: red;
       font-family: 'Raleway', sans-serif;
     }
@@ -163,8 +165,8 @@ export default {
     color: $white;
     align-self: flex-end;
     background-color: $primary;
-    font-family: 'Roboto',sans-serif;
-    font-size: 14px;
+    font-family: 'Roboto',sans-serif;    
+    font-size: responsive 12px 14px;
     font-weight: 700;
     border: none;
     margin: 5px;

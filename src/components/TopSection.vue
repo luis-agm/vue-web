@@ -40,7 +40,7 @@ export default {
       currentTag: 'Full-Stack',
       tagPos: 0,
       headerTitle: 'Make Great Stuff',
-      tags: ['JavaScript', 'ES2018', 'NodeJS', 'Python', 'VueJS', 'React-Redux', 'AngularJS', 'Full-Stack'],
+      tags: ['JavaScript', 'ES2018', 'NodeJS', 'Python', 'VueJS', 'React', 'Angular', 'Full-Stack'],
       buttons: [
         { icon: 'fa-github', text: 'GitHub', link: 'https://github.com/luis-agm' },
         { icon: 'fa-linkedin', text: 'LinkedIn', link: 'https://linkedin.com/in/luis-agm-dev' },
@@ -80,6 +80,7 @@ export default {
   font-family: 'Raleway', Helvetica, Arial, sans-serif;
   background: radial-gradient(ellipse at 50% 60%, rgba(255, 255, 255, 0.0), rgba(0, 0, 0, 5)), url('../assets/moreSky.jpg');
   background-size: cover;
+  background-position: center;
   display: flex;
   flex-flow: column;
   align-items: center;
