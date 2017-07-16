@@ -1,6 +1,6 @@
 <template>
   <div class='footer'>
-    <span class='footer__text'>Copyright  ©  2017 Luis González. All right reserved.</span>
+    <span class='footer__text'>Copyright  ©  2017 Luis González. All rights reserved.</span>
     <span class='footer__text'>Picture: <a href='https://www.google.com/search?q=Mount+Roraima&oq=Mount+Roraima'>Mount Roraima</a></span>
   </div>
 </template>

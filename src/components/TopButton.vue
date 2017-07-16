@@ -19,7 +19,7 @@ export default {
       padding: 15px 10%;
       display: flex;
       justify-content: space-between;
-      margin: 15px 30px;
+      margin: 15px 0;
       text-transform: uppercase;
       letter-spacing: 2px;
       outline: none;

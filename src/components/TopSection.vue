@@ -1,28 +1,28 @@
 <template>
   <div id='top-section' class='top-section'>
-    <div class='top-section__container medium-10 large-10 large-centered columns grid-x'>
+    <div class='top-section__container medium-12 large-10 large-centered columns grid-x'>
       <div class='top-section__banner medium-12 large-12 large-centered columns grid-x'>
-        <div class='top-section__title small-10 small-centered medium-12 medium-centered large-6 columns'>
+        <div class='top-section__title small-12 small-centered medium-8 medium-centered large-6 columns'>
           <h1 class='top-section__main-banner name'>Luis González</h1>
           <transition name='fade'>
             <span v-show="showTag === true" class='top-section__main-banner great'>{{currentTag}}</span>
           </transition>
           <h1 class='top-section__main-banner developer'>Developer</h1>
         </div>
-        <div class='top-section__buttons small-12 small-centered medium-12 medium-centered large-6 columns grid-x'>
+        <div class='top-section__buttons small-12 small-centered medium-8 medium-centered large-6 columns grid-x'>
           <TopButton v-for='button in buttons' :key='button' :icon='button.icon' :text='button.text' @click.native='goTo( button.link )'></TopButton>
         </div>
       </div>
     </div>
     <ModalForm v-if='showForm' @close='closeForm()'></ModalForm>
-    <!--<div id='parts'></div>-->
+    <div id='parts'></div>
     <MainFooter class='wat' />
   </div>
 </template>
 
 <script>
 import 'particles.js'
-// import partCfg from '@/assets/particles.config.json'
+import partCfg from '@/assets/particles.config.json'
 import TopButton from 'components/TopButton.vue'
 import ModalForm from 'components/ModalForm.vue'
 import MainFooter from 'components/Footer.vue'
@@ -30,7 +30,7 @@ import MainFooter from 'components/Footer.vue'
 export default {
   name: 'TopSection',
   mounted () {
-    // window.particlesJS('parts', partCfg)
+    window.particlesJS('parts', partCfg)
     setInterval(() => { this.cycleTags() }, 1500)
     // Sphere({container: 'clouder', tags: [ ...this.tags ]})
   },
