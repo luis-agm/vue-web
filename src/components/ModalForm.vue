@@ -49,7 +49,7 @@ export default {
       mailData: {
         message: '',
         senderEmail: '',
-        _gotcha: 'w'
+        _gotcha: ''
       },
       sendState: 'start' // start -> wait -> success
     }
