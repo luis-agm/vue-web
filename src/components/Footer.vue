@@ -14,13 +14,15 @@
 <style lang='scss'>
 
   .footer {
+    margin-top: 30px;
     margin-bottom: 10px;
     font-family: 'Raleway', Helvetica, Arial, sans-serif;
     height: auto;
     flex-flow: column;
+    justify-content: center;
     align-content: center;
-    align-self: center;
-    position:absolute;
+    text-align: center;
+    position:relative;
     bottom: 0;
     background: transparent;
     &__text {

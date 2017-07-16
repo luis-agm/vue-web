@@ -10,13 +10,13 @@ export default {
 
 <style lang='scss' scoped>
   .btn {
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-weight: 500;
-      font-size: inherit;
+      font-size: responsive 0.8rem 1.2rem;
       color: $white;
       background: rgba(0, 0, 0, 0.3);
       cursor: pointer;
-      padding: 15px 70px;
+      padding: 15px 10%;
       display: flex;
       justify-content: space-between;
       margin: 15px 30px;

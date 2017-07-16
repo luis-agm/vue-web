@@ -1,8 +1,7 @@
 <template>
   <div id="app">
     <div v-if='!ready' style='width: 100%; height: 100vh; background-color:seagreen; z-index: 9999;'></div>
-    <top-section class='topsection grid-x'></top-section>
-    <main-footer></main-footer>
+    <top-section class='topsection'></top-section>
     <!--<router-view v-if='nav'></router-view>-->
   </div>
 </template>

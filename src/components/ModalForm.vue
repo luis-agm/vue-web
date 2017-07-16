@@ -95,11 +95,12 @@ export default {
     margin-top: 0;
     margin-bottom: 10px;
     color: $primary;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 32px;
   }
   .sub-header {
     font-style: italic;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 14px;
     color: $light-gray;
   }
@@ -125,15 +126,16 @@ export default {
     margin: 20px 0;
     display: flex;
     flex-flow: column;
-    max-width: 320px;
+    width: 100%;
     .form-input {
-      max-width: 80%;
+      box-sizing: border-box;
+      width: 100%;
       font-family: 'Roboto', sans-serif;
-      height: 24px;
-      margin: 5px;
+      height: 35px;
+      margin: 5px 0px;
       border-radius: 2px;
-      border: 1px solid $light-gray;
-      padding: 5px 5px;
+      border: 3px solid $dark-gray;
+      padding: 10px 10px;
 
       &.message {
         height: 70px;
