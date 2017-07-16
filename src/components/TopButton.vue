@@ -11,7 +11,7 @@ export default {
 <style lang='scss' scoped>
   .btn {
       font-family: 'Raleway', sans-serif;
-      font-weight: 500;
+      font-weight: 400;
       font-size: responsive 0.8rem 1.2rem;
       color: $white;
       background: rgba(0, 0, 0, 0.3);
