@@ -5,7 +5,6 @@
         <div class="modal-container" transition='modal'>
           <div class="modal-header">
             <h3>Say hello!</h3>
-            <span class='sub-header'>I'm always up for a chat</span>
           </div>
           <div class="modal-body">
             <transition name='mail-sending' mode='out-in'>
@@ -97,12 +96,6 @@ export default {
     color: $primary;
     font-weight: 600;
     font-size: responsive 24px 38px;
-  }
-  .sub-header {
-    font-style: italic;
-    font-weight: 600;
-    font-size: responsive 12px 18px;
-    color: $light-gray;
   }
 }
 

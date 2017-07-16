@@ -14,6 +14,7 @@
 <style lang='scss'>
 
   .footer {
+    z-index: 2;
     margin-top: 30px;
     margin-bottom: 10px;
     font-family: 'Raleway', Helvetica, Arial, sans-serif;
