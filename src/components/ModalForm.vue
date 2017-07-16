@@ -45,7 +45,7 @@ import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
 export default {
   data () {
     return {
-      sendEmail: 'http://formspree.io/luis.agm24@gmail.com',
+      sendEmail: 'https://formspree.io/luis.agm24@gmail.com',
       mailData: {
         message: '',
         senderEmail: '',
