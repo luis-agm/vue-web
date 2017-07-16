@@ -1,9 +1,8 @@
 <template>
   <div id="app">
     <div v-if='!ready' style='width: 100%; height: 100vh; background-color:seagreen; z-index: 9999;'></div>
-    <top-section class='topsection grid-x'></top-section>
-    <main-footer></main-footer>
-    <router-view v-if='nav'></router-view>
+    <top-section class='topsection'></top-section>
+    <!--<router-view v-if='nav'></router-view>-->
   </div>
 </template>
 
@@ -54,7 +53,7 @@ a {
   flex-flow: column;
   font-size: 14pt;
   -moz-osx-font-smoothing: grayscale;
-  height: 100vh;  
+  min-height: 100vh;  
 }
 
 </style>

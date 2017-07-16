@@ -11,7 +11,7 @@
             <transition name='mail-sending' mode='out-in'>
               <div class='form' v-if="sendState === 'start'" key='start'> <!-- the fucking key is kind of important for transitions -->
                 <input class='form-input email' v-validate="'required|email'" :class="{ 'is-danger': errors.has('email')}" name='email' type='email' v-model='mailData.senderEmail' placeholder="Your email"></input>
-                <span class='form-error' v-show="errors.has('email')">You must provide an email.</span>
+                <span class='form-error' v-show="errors.has('email')">You must provide a valid email.</span>
                 <textarea class='form-input message' v-validate="'required'" :class="{ 'is-danger': errors.has('message')}" name='message' v-model='mailData.message' placeholder="Your message"></textarea>
                 <span class='form-error' v-show="errors.has('message')">Your message can not be empty.</span>
                 <input type="text" v-model='mailData._gotcha' name="_gotcha" style="display:none" />
@@ -95,12 +95,13 @@ export default {
     margin-top: 0;
     margin-bottom: 10px;
     color: $primary;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: responsive 24px 38px;
   }
   .sub-header {
     font-style: italic;
-    font-weight: 400;
-    font-size: 14px;
+    font-weight: 600;
+    font-size: responsive 12px 18px;
     color: $light-gray;
   }
 }
@@ -125,28 +126,32 @@ export default {
     margin: 20px 0;
     display: flex;
     flex-flow: column;
-    max-width: 320px;
+    width: 100%;
     .form-input {
-      max-width: 80%;
+      box-sizing: border-box;
+      width: 100%;
       font-family: 'Roboto', sans-serif;
-      height: 24px;
-      margin: 5px;
+      font-size: responsive 12px 14px;
+      height: 35px;
+      margin: 5px 0px;
       border-radius: 2px;
-      border: 1px solid $light-gray;
-      padding: 5px 5px;
+      border: none;
+      border-bottom: 2px solid $dark-gray;
+      padding: 0 10px;
 
       &.message {
-        height: 70px;
+        height: 85px;
+        padding-top: 10px;        
       }
 
       &.is-danger {
         box-shadow: 0px 0px 4px red;
       }
     }
-    .form-error {
-      font-size: 10px;
+    .form-error {      
       color: red;
       font-family: 'Raleway', sans-serif;
+      font-size: responsive 12px 14px;
     }
   }
 }
@@ -161,8 +166,8 @@ export default {
     color: $white;
     align-self: flex-end;
     background-color: $primary;
-    font-family: 'Roboto',sans-serif;
-    font-size: 14px;
+    font-family: 'Roboto',sans-serif;    
+    font-size: responsive 12px 14px;
     font-weight: 700;
     border: none;
     margin: 5px;

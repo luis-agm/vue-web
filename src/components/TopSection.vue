@@ -1,19 +1,22 @@
 <template>
   <div id='top-section' class='top-section'>
-    <div class='top-section__banner medium-10 large-10 large-centered columns grid-x'>
-      <div class='top-section__title small-10 small-centered medium-12 medium-centered large-6 columns'>
-        <h1 class='top-section__main-banner name'>Luis González</h1>
-        <transition name='fade'>
-          <span v-show="showTag === true" class='top-section__main-banner great'>{{currentTag}}</span>
-        </transition>
-        <h1 class='top-section__main-banner developer'>Developer</h1>
-      </div>
-      <div class='top-section__buttons small-10 small-centered medium-12 medium-centered large-6 columns grid-x'>
-        <TopButton v-for='button in buttons' :key='button' :icon='button.icon' :text='button.text' @click.native='goTo( button.link )'></TopButton>
+    <div class='top-section__container medium-12 large-10 large-centered columns grid-x'>
+      <div class='top-section__banner medium-12 large-12 large-centered columns grid-x'>
+        <div class='top-section__title small-12 small-centered medium-8 medium-centered large-6 columns'>
+          <h1 class='top-section__main-banner name'>Luis González</h1>
+          <transition name='fade'>
+            <span v-show="showTag === true" class='top-section__main-banner great'>{{currentTag}}</span>
+          </transition>
+          <h1 class='top-section__main-banner developer'>Developer</h1>
+        </div>
+        <div class='top-section__buttons small-12 small-centered medium-8 medium-centered large-6 columns grid-x'>
+          <TopButton v-for='button in buttons' :key='button' :icon='button.icon' :text='button.text' @click.native='goTo( button.link )'></TopButton>
+        </div>
       </div>
     </div>
     <ModalForm v-if='showForm' @close='closeForm()'></ModalForm>
     <div id='parts'></div>
+    <MainFooter class='wat' />
   </div>
 </template>
 
@@ -22,6 +25,7 @@ import 'particles.js'
 import partCfg from '@/assets/particles.config.json'
 import TopButton from 'components/TopButton.vue'
 import ModalForm from 'components/ModalForm.vue'
+import MainFooter from 'components/Footer.vue'
 
 export default {
   name: 'TopSection',
@@ -36,10 +40,11 @@ export default {
       currentTag: 'Full-Stack',
       tagPos: 0,
       headerTitle: 'Make Great Stuff',
-      tags: ['JavaScript', 'Babel/ES6', 'NodeJS', 'Python', 'VueJS', 'React-Redux'],
+      tags: ['JavaScript', 'ES2018', 'NodeJS', 'Python', 'VueJS', 'React', 'Angular', 'Full-Stack'],
       buttons: [
-        { icon: 'fa-github', text: 'GitHub', link: 'http://github.com/luis-agm' },
-        { icon: 'fa-linkedin', text: 'LinkedIn', link: 'http://linkedin.com/in/luis-agm-dev' },
+        { icon: 'fa-github', text: 'GitHub', link: 'https://github.com/luis-agm' },
+        { icon: 'fa-linkedin', text: 'LinkedIn', link: 'https://linkedin.com/in/luis-agm-dev' },
+        { icon: 'fa-codepen', text: 'CodePen', link: 'https://codepen.io/luis-agm/' },
         { icon: 'fa-envelope', text: 'Contact Me', link: 'contact' }
       ],
       showForm: false
@@ -65,7 +70,7 @@ export default {
       }, 300)
     }
   },
-  components: { TopButton, ModalForm }
+  components: { TopButton, ModalForm, MainFooter }
 }
 </script>
 
@@ -75,18 +80,24 @@ export default {
   font-family: 'Raleway', Helvetica, Arial, sans-serif;
   background: radial-gradient(ellipse at 50% 60%, rgba(255, 255, 255, 0.0), rgba(0, 0, 0, 5)), url('../assets/moreSky.jpg');
   background-size: cover;
-  background-attachment: fixed;
+  background-position: center;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  padding: 40px;
+  min-height: 100vh;
+  overflow:visible;
+  padding: 0px 40px;
 
   &__buttons {
     display: flex;
     justify-content: center;
     min-height: 220px;    
+  }
+
+  &__container {
+    display: flex;
+    flex: 20 0 auto;
   }
 
   &__banner {
@@ -95,11 +106,13 @@ export default {
     flex-flow: row;
     max-width: 1200px;
     justify-content: space-around;
+    align-self: center;
   }
 
   &__title {
     display: flex;
     flex-flow: column;
+    justify-content: center;
   }
 
   &__main-banner {
