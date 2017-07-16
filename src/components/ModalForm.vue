@@ -11,7 +11,7 @@
             <transition name='mail-sending' mode='out-in'>
               <div class='form' v-if="sendState === 'start'" key='start'> <!-- the fucking key is kind of important for transitions -->
                 <input class='form-input email' v-validate="'required|email'" :class="{ 'is-danger': errors.has('email')}" name='email' type='email' v-model='mailData.senderEmail' placeholder="Your email"></input>
-                <span class='form-error' v-show="errors.has('email')">You must provide an email.</span>
+                <span class='form-error' v-show="errors.has('email')">You must provide a valid email.</span>
                 <textarea class='form-input message' v-validate="'required'" :class="{ 'is-danger': errors.has('message')}" name='message' v-model='mailData.message' placeholder="Your message"></textarea>
                 <span class='form-error' v-show="errors.has('message')">Your message can not be empty.</span>
                 <input type="text" v-model='mailData._gotcha' name="_gotcha" style="display:none" />
@@ -151,6 +151,7 @@ export default {
     .form-error {      
       color: red;
       font-family: 'Raleway', sans-serif;
+      font-size: responsive 12px 14px;
     }
   }
 }
