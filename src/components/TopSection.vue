@@ -16,7 +16,6 @@
     </div>
     <ModalForm v-if='showForm' @close='closeForm()'></ModalForm>
     <div id='parts'></div>
-    <MainFooter class='wat' />
   </div>
 </template>
 
@@ -78,14 +77,11 @@ export default {
 
 .top-section {
   font-family: 'Raleway', Helvetica, Arial, sans-serif;
-  background: radial-gradient(ellipse at 50% 60%, rgba(255, 255, 255, 0.0), rgba(0, 0, 0, 5)), url('../assets/moreSky.jpg');
-  background-size: cover;
-  background-position: center;
   display: flex;
   flex-flow: column;
+  flex: 20 0 auto;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
   overflow:visible;
   padding: 0px 40px;
 
@@ -97,7 +93,6 @@ export default {
 
   &__container {
     display: flex;
-    flex: 20 0 auto;
   }
 
   &__banner {

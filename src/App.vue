@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <div v-if='!ready' style='width: 100%; height: 100vh; background-color:seagreen; z-index: 9999;'></div>
     <top-section class='topsection'></top-section>
+    <MainFooter class='wat' />
     <!--<router-view v-if='nav'></router-view>-->
   </div>
 </template>
@@ -16,12 +16,8 @@ export default {
   data () {
     return {
       nav: false,
-      sidenav: false,
-      ready: false
+      sidenav: false
     }
-  },
-  mounted () {
-    this.ready = true
   },
   methods: {
     toggleSideNav () {
@@ -51,6 +47,9 @@ a {
 #app {
   display: flex;
   flex-flow: column;
+  background: radial-gradient(ellipse at 50% 60%, rgba(255, 255, 255, 0.0), rgba(0, 0, 0, 5)), url('./assets/moreSky.jpg');
+  background-size: cover;
+  background-position: center;
   font-size: 14pt;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;  
