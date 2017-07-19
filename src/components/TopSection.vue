@@ -39,7 +39,7 @@ export default {
       currentTag: 'Full-Stack',
       tagPos: 0,
       headerTitle: 'Make Great Stuff',
-      tags: ['JavaScript', 'ES2018', 'NodeJS', 'Python', 'VueJS', 'React', 'Angular', 'Full-Stack'],
+      tags: ['JavaScript', 'ES2017', 'NodeJS', 'Python', 'VueJS', 'React', 'Angular', 'Full-Stack'],
       buttons: [
         { icon: 'fa-github', text: 'GitHub', link: 'https://github.com/luis-agm' },
         { icon: 'fa-linkedin', text: 'LinkedIn', link: 'https://linkedin.com/in/luis-agm-dev' },
@@ -112,7 +112,7 @@ export default {
 
   &__main-banner {
     text-shadow: 2px 3px 10px black;
-    font-size: responsive 50px 64px;
+    font-size: responsive 45px 64px;
     font-weight: 900;    
     color: #FFF;
     top: 50%;
@@ -125,7 +125,7 @@ export default {
     }
     &.great {
       align-self: flex-start;
-      font-size: responsive 55px 70px;
+      font-size: responsive 50px 70px;
       width: auto;
       color: $primary;
     }
