@@ -57,7 +57,7 @@ export default {
       if (link === 'contact') {
         this.showForm = true
       } else {
-        window.location = link
+        window.open(link, '_blank')
       }
     },
     cycleTags () {
