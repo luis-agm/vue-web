@@ -64,12 +64,12 @@ export default {
       }
 
       &.btn-1e:hover:after {
-        height: 320%;
+        height: 350%;
         opacity: 1;
       }
 
       &.btn-1e:active:after {
-        height: 400%;
+        height: 500%;
         opacity: 1;
       }
     }
